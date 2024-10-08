@@ -3,50 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Arun</title>
+    <title>Happy Birthday Tejashree!</title>
     <style>
         body {
-            background-color: #FFD700;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fef9e7; /* Soft yellow */
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
-        .popup-container {
+
+        .container {
             text-align: center;
-            background-color: #FF6F61;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
         }
-        .popup-container h1 {
-            font-size: 3rem;
-            color: #FFFFFF;
-        }
-        .popup-container img {
+
+        .glow-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            margin-top: 20px;
+            box-shadow: 0 0 20px 10px rgba(255, 105, 180, 0.6); /* Pink glow */
+            animation: glow 2s infinite alternate;
+            margin-bottom: 20px;
         }
-        .popup-container p {
-            color: #FFFFFF;
-            font-size: 1.5rem;
-            margin-top: 15px;
+
+        /* Glowing animation */
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px 10px rgba(255, 105, 180, 0.4); /* Pinkish glow */
+            }
+            to {
+                box-shadow: 0 0 40px 20px rgba(255, 20, 147, 0.8); /* Stronger pink glow */
+            }
         }
-        .popup-container .heart {
-            font-size: 50px;
-            color: #FF1493;
+
+        h1 {
+            font-size: 36px;
+            color: #ff1493; /* Deep pink */
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.8);
+            margin: 0;
+            animation: popUp 1.5s ease-out;
         }
+
+        .heart {
+            color: red;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        /* Popup animation for text */
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .message {
+            background-color: #f5f5dc; /* Light beige */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: #444;
+            font-size: 18px;
+            max-width: 500px;
+            margin: 0 auto;
+            animation: fadeIn 3s ease-in-out 2s;
+        }
+
+        /* Fading in animation for message */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="popup-container">
-        <h1>Happy Birthday ARUN! <span class="heart">♥</span></h1>
-        <img src="arun_picture.jpg" alt="Arun's Picture">
-        <p>Our friendship turned into a bond like brother and sister, and I'm so lucky to have you in my life. Here's to many more adventures together!</p>
+
+    <div class="container">
+        <img src="https://your-image-url.com/picture.jpg" alt="Tejashree's Picture" class="glow-img">
+        <h1>Happy Birthday Tejashree! <span class="heart">❤</span></h1>
+        <div class="message">
+            <p>
+                Wishing you a wonderful birthday filled with joy, laughter, and love. 
+                Our friendship has turned into a bond of brother and sister that I cherish so much. 
+                Here's to many more memories and a lifetime of happiness! Happy Birthday once again!
+            </p>
+        </div>
     </div>
+
 </body>
 </html>
