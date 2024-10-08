@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday  ARUN❤️</title>
+    <title>Happy Birthday Arun❤️</title>
     <style>
         body {
-            background-color: #dec6f5; /* Soft yellow */
+            background-color: #dec6f5; /* Soft purple */
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
@@ -14,17 +14,21 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            position: relative;
         }
 
+        /* Container */
         .container {
             text-align: center;
+            z-index: 2; /* Ensure content appears above blasters */
         }
 
+        /* Glowing Image */
         .glow-img {
-            width: 200px;
-            height: 200px;
+            width: 300px; /* Increased size */
+            height: 300px;
             border-radius: 50%;
-            box-shadow: 0 0 20px 10px rgba(255, 105, 180, 0.6); /* Pink glow */
+            box-shadow: 0 0 30px 20px rgba(255, 255, 0, 0.6); /* Soft glowing light */
             animation: glow 2s infinite alternate;
             margin-bottom: 20px;
         }
@@ -32,21 +36,23 @@
         /* Glowing animation */
         @keyframes glow {
             from {
-                box-shadow: 0 0 20px 10px rgba(255, 105, 180, 0.4); /* Pinkish glow */
+                box-shadow: 0 0 30px 15px rgba(255, 255, 0, 0.4); /* Yellowish glow */
             }
             to {
-                box-shadow: 0 0 40px 20px rgba(255, 20, 147, 0.8); /* Stronger pink glow */
+                box-shadow: 0 0 50px 30px rgba(255, 255, 0, 0.8); /* Brighter yellow glow */
             }
         }
 
+        /* Title with Heart */
         h1 {
-            font-size: 36px;
+            font-size: 48px;
             color: #ff1493; /* Deep pink */
             text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.8);
             margin: 0;
             animation: popUp 1.5s ease-out;
         }
 
+        /* Heart Style */
         .heart {
             color: red;
             font-size: 48px;
@@ -65,16 +71,18 @@
             }
         }
 
+        /* Royal Message Box */
         .message {
-            background-color: #f5f5dc; /* Light beige */
-            padding: 20px;
+            background-color: #4b0082; /* Royal purple */
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            color: #444;
-            font-size: 18px;
-            max-width: 500px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elegant shadow */
+            color: #ffd700; /* Golden text */
+            font-size: 20px;
+            max-width: 600px;
             margin: 0 auto;
             animation: fadeIn 3s ease-in-out 2s;
+            border: 2px solid #ffd700; /* Golden border */
         }
 
         /* Fading in animation for message */
@@ -87,20 +95,59 @@
             }
         }
 
+        /* Blaster Animation (Confetti) */
+        .blaster {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('confetti.png'); /* Replace with confetti image */
+            background-size: contain;
+            animation: blast 1.5s ease-out;
+        }
+
+        .blaster.left {
+            top: 10%;
+            left: 0;
+            transform: rotate(30deg);
+        }
+
+        .blaster.right {
+            top: 10%;
+            right: 0;
+            transform: rotate(-30deg);
+        }
+
+        /* Blaster keyframes */
+        @keyframes blast {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) scale(1.5); /* Move upwards */
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Blasters for Left and Right -->
+    <div class="blaster left"></div>
+    <div class="blaster right"></div>
+
+    <!-- Main Container -->
     <div class="container">
         <img src="arun_picture.jpg" alt="arun_picture.jpg" class="glow-img">
         <h1>Happy Birthday Arun <span class="heart">❤</span></h1>
         <div class="message">
             <p>
-                                              Hey aruney🙋‍♀️
-                I Wishing you a wonderful birthday🎂 filled with joy, laughter, and love. 
+                Hey Aruney🙋‍♀️,
+                Wishing you a wonderful birthday🎂 filled with joy, laughter, and love. 
                 Our friendship has turned into a bond of brother and sister that I cherish so much. 
                 Here's to many more memories and a lifetime of happiness! I Miss You So Much. 
-                                    அருண், பிறந்தநாள் வாழ்த்துகள்
+                <br><br>
+                அருண், பிறந்தநாள் வாழ்த்துகள்!
             </p>
         </div>
     </div>
