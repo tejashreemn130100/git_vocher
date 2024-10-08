@@ -3,94 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Technology Usage </title>
+    <title>Happy Birthday Arun❤️</title>
     <style>
         body {
-            background-color: #f9f9f9;
+            background-color: #dec6f5; /* Soft purple */
             font-family: 'Arial', sans-serif;
-            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
+            position: relative;
         }
-        .survey-container {
-            width: 50%;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
-        }
-        .survey-container h2 {
+
+        /* Container */
+        .container {
             text-align: center;
-            color: #007bff;
+            z-index: 2; /* Ensure content appears above blasters */
+        }
+
+        /* Glowing Image */
+        .glow-img {
+            width: 300px; /* Increased size */
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 30px 20px rgba(255, 255, 0, 0.6); /* Soft glowing light */
+            animation: glow 2s infinite alternate;
             margin-bottom: 20px;
-            font-size: 24px;
         }
-        .survey-container label {
-            font-size: 16px;
-            margin-top: 15px;
-            display: block;
+
+        /* Glowing animation */
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 30px 15px rgba(255, 255, 0, 0.4); /* Yellowish glow */
+            }
+            to {
+                box-shadow: 0 0 50px 30px rgba(255, 255, 0, 0.8); /* Brighter yellow glow */
+            }
         }
-        .survey-container input, .survey-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 14px;
+
+        /* Title with Heart */
+        h1 {
+            font-size: 48px;
+            color: #ff1493; /* Deep pink */
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.8);
+            margin: 0;
+            animation: popUp 1.5s ease-out;
         }
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-top: 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            text-align: center;
+
+        /* Heart Style */
+        .heart {
+            color: red;
+            font-size: 48px;
+            margin-bottom: 20px;
         }
-        .submit-btn:hover {
-            background-color: #0056b3;
+
+        /* Popup animation for text */
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        @media (max-width: 768px) {
-            .survey-container {
-                width: 90%;
+
+        /* Royal Message Box */
+        .message {
+            background-color: #4b0082; /* Royal purple */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elegant shadow */
+            color: #ffd700; /* Golden text */
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 3s ease-in-out 2s;
+            border: 2px solid #ffd700; /* Golden border */
+        }
+
+        /* Fading in animation for message */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Blaster Animation (Confetti) */
+        .blaster {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('confetti.png'); /* Replace with confetti image */
+            background-size: contain;
+            animation: blast 1.5s ease-out;
+        }
+
+        .blaster.left {
+            top: 10%;
+            left: 0;
+            transform: rotate(30deg);
+        }
+
+        .blaster.right {
+            top: 10%;
+            right: 0;
+            transform: rotate(-30deg);
+        }
+
+        /* Blaster keyframes */
+        @keyframes blast {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px) scale(1.5); /* Move upwards */
+                opacity: 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="survey-container">
-        <h2>Survey for Technology Usage in Daily Life </h2>
-        <form id="surveyForm">
-            <label for="question1">1. How many hours do you spend using digital devices (such as smartphones, laptops, tablets) per day?</label>
-            <textarea id="question1" required></textarea>
-            
-            <label for="question2">2. Which technology or device do you use the most in your daily routine?</label>
-            <input type="text" id="question2" required>
-            
-            <label for="question3">3.What is the primary purpose of your technology usage?</label>
-            <textarea id="question3" required></textarea>
-            
-            <label for="question4">4. How has technology improved your efficiency in day-to-day activities?</label>
-            <input type="text" id="question4" required>
-            
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
+
+    <!-- Blasters for Left and Right -->
+    <div class="blaster left"></div>
+    <div class="blaster right"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <img src="arun_picture.jpg" alt="arun_picture.jpg" class="glow-img">
+        <h1>Happy Birthday Arun <span class="heart">❤</span></h1>
+        <div class="message">
+            <p>
+                Hey Aruney🙋‍♀️,
+                Wishing you a wonderful birthday🎂 filled with joy, laughter, and love. 
+                Our friendship has turned into a bond of brother and sister that I cherish so much. 
+                Here's to many more memories and a lifetime of happiness! I Miss You So Much. 
+                <br><br>
+                அருண், பிறந்தநாள் வாழ்த்துகள்!
+            </p>
+        </div>
     </div>
 
-    <script>
-        const form = document.getElementById('surveyForm');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            window.location.href = 'popup.html';
-        });
-    </script>
 </body>
 </html>
