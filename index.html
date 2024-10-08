@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Arun❤️</title>
+    <title>Happy Birthday ARUN❤️</title>
     <style>
         body {
-            background-color: #dec6f5; /* Soft purple */
+            background-color: #dec6f5;
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
@@ -17,49 +17,61 @@
             position: relative;
         }
 
-        /* Container */
+        /* Confetti Canvas */
+        #confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
         .container {
             text-align: center;
-            z-index: 2; /* Ensure content appears above blasters */
+            position: relative;
+            z-index: 1;
         }
 
-        /* Glowing Image */
+        /* Image Glow and Hover Zoom */
         .glow-img {
-            width: 300px; /* Increased size */
-            height: 300px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            box-shadow: 0 0 30px 20px rgba(255, 255, 0, 0.6); /* Soft glowing light */
+            box-shadow: 0 0 40px 15px rgba(255, 105, 180, 0.6);
             animation: glow 2s infinite alternate;
-            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
 
-        /* Glowing animation */
+        .glow-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Glowing animation for the image */
         @keyframes glow {
             from {
-                box-shadow: 0 0 30px 15px rgba(255, 255, 0, 0.4); /* Yellowish glow */
+                box-shadow: 0 0 40px 15px rgba(255, 105, 180, 0.4);
             }
             to {
-                box-shadow: 0 0 50px 30px rgba(255, 255, 0, 0.8); /* Brighter yellow glow */
+                box-shadow: 0 0 60px 30px rgba(255, 20, 147, 0.8);
             }
         }
 
-        /* Title with Heart */
+        /* 3D Text Effect */
         h1 {
             font-size: 48px;
-            color: #ff1493; /* Deep pink */
-            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.8);
+            color: #ff1493;
+            text-shadow: 3px 3px 8px rgba(255, 20, 147, 0.8);
             margin: 0;
             animation: popUp 1.5s ease-out;
         }
 
-        /* Heart Style */
         .heart {
             color: red;
             font-size: 48px;
-            margin-bottom: 20px;
         }
 
-        /* Popup animation for text */
+        /* Popup animation for the text */
         @keyframes popUp {
             0% {
                 transform: scale(0);
@@ -73,19 +85,24 @@
 
         /* Royal Message Box */
         .message {
-            background-color: #4b0082; /* Royal purple */
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elegant shadow */
-            color: #ffd700; /* Golden text */
+            background-color: #4B0082;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            color: #FFD700;
             font-size: 20px;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
             animation: fadeIn 3s ease-in-out 2s;
-            border: 2px solid #ffd700; /* Golden border */
+            border: 3px solid #FFD700; /* Gold border */
+            transition: box-shadow 0.3s ease;
         }
 
-        /* Fading in animation for message */
+        .message:hover {
+            box-shadow: 0 0 30px 15px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Fade-in animation for the message */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -94,63 +111,27 @@
                 opacity: 1;
             }
         }
-
-        /* Blaster Animation (Confetti) */
-        .blaster {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: url('confetti.png'); /* Replace with confetti image */
-            background-size: contain;
-            animation: blast 1.5s ease-out;
-        }
-
-        .blaster.left {
-            top: 10%;
-            left: 0;
-            transform: rotate(30deg);
-        }
-
-        .blaster.right {
-            top: 10%;
-            right: 0;
-            transform: rotate(-30deg);
-        }
-
-        /* Blaster keyframes */
-        @keyframes blast {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-200px) scale(1.5); /* Move upwards */
-                opacity: 0;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Blasters for Left and Right -->
-    <div class="blaster left"></div>
-    <div class="blaster right"></div>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
 
-    <!-- Main Container -->
     <div class="container">
-        <img src="arun_picture.jpg" alt="arun_picture.jpg" class="glow-img">
+        <img src="arun_picture.jpg" alt="Arun's Picture" class="glow-img">
         <h1>Happy Birthday Arun <span class="heart">❤</span></h1>
         <div class="message">
-            <p>
-                Hey Aruney🙋‍♀️,
-                Wishing you a wonderful birthday🎂 filled with joy, laughter, and love. 
-                Our friendship has turned into a bond of brother and sister that I cherish so much. 
-                Here's to many more memories and a lifetime of happiness! I Miss You So Much. 
-                <br><br>
-                அருண், பிறந்தநாள் வாழ்த்துகள்!
-            </p>
+            <p>Hey Aruney🙋‍♀️, Wishing you a wonderful birthday🎂 filled with joy, laughter, and love. Our friendship has turned into a bond of brother and sister that I cherish so much. Here's to many more memories and a lifetime of happiness! I Miss You So Much.<br>அருண், பிறந்தநாள் வாழ்த்துகள்!</p>
         </div>
     </div>
 
+    <script>
+        // Confetti.js for confetti effect
+        const confettiSettings = { target: 'confetti', max: 200 };
+        const confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
 </body>
 </html>
