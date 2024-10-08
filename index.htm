@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey for Arun's Birthday</title>
+    <style>
+        body {
+            background-color: #FFDEE9;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .survey-container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #F4F9F9;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .survey-container h2 {
+            text-align: center;
+            color: #C3073F;
+        }
+        .survey-container label {
+            display: block;
+            margin-top: 15px;
+        }
+        .survey-container input, .survey-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .submit-btn {
+            display: block;
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #3D84B8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #00203FFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <h2>Survey for Arun's Birthday</h2>
+        <form id="surveyForm">
+            <label for="question1">1. What's your favorite memory with Arun?</label>
+            <textarea id="question1" required></textarea>
+            
+            <label for="question2">2. How do you describe Arun in 3 words?</label>
+            <input type="text" id="question2" required>
+            
+            <label for="question3">3. What advice would you give Arun for the future?</label>
+            <textarea id="question3" required></textarea>
+            
+            <label for="question4">4. If you could gift Arun anything, what would it be?</label>
+            <input type="text" id="question4" required>
+            
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('surveyForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'popup.html';
+        });
+    </script>
+</body>
+</html>
