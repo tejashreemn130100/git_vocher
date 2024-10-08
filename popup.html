@@ -6,7 +6,7 @@
     <title>Happy Birthday Arun❤️</title>
     <style>
         body {
-            background-color:#FFFDD0; /* Soft purple */
+            background-color: #FAEBD7; /* Light pastel */
             font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
@@ -20,15 +20,15 @@
         /* Container */
         .container {
             text-align: center;
-            z-index: 2; /* Ensure content appears above blasters */
+            z-index: 2;
         }
 
         /* Glowing Image */
         .glow-img {
-            width: 300px; /* Increased size */
+            width: 300px;
             height: 300px;
             border-radius: 50%;
-            box-shadow: 0 0 30px 20px rgba(255, 255, 0, 0.6); /* Soft glowing light */
+            box-shadow: 0 0 30px 20px rgba(255, 192, 203, 0.6); /* Soft pink glow */
             animation: glow 2s infinite alternate;
             margin-bottom: 20px;
         }
@@ -36,18 +36,18 @@
         /* Glowing animation */
         @keyframes glow {
             from {
-                box-shadow: 0 0 30px 15px rgba(255, 255, 0, 0.4); /* Yellowish glow */
+                box-shadow: 0 0 30px 15px rgba(255, 192, 203, 0.4); /* Pinkish glow */
             }
             to {
-                box-shadow: 0 0 50px 30px rgba(255, 255, 0, 0.8); /* Brighter yellow glow */
+                box-shadow: 0 0 50px 30px rgba(255, 192, 203, 0.8); /* Brighter pink glow */
             }
         }
 
         /* Title with Heart */
         h1 {
             font-size: 48px;
-            color: #ff1493; /* Deep pink */
-            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.8);
+            color: #FF69B4; /* Hot pink */
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.8);
             margin: 0;
             animation: popUp 1.5s ease-out;
         }
@@ -73,16 +73,16 @@
 
         /* Royal Message Box */
         .message {
-            background-color: #E1C0FA; /* Royal purple */
+            background-color: #FFE4E1; /* Misty Rose */
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elegant shadow */
-            color: #ffd700; /* Golden text */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: #8B0000; /* Dark red text */
             font-size: 20px;
             max-width: 600px;
             margin: 0 auto;
             animation: fadeIn 3s ease-in-out 2s;
-            border: 2px solid #ffd700; /* Golden border */
+            border: 2px solid #8B0000; /* Dark red border */
         }
 
         /* Fading in animation for message */
@@ -95,36 +95,48 @@
             }
         }
 
-        /* Blaster Animation (Confetti) */
-        .blaster {
+        /* Balloon Animation */
+        .balloon {
             position: absolute;
-            width: 100px;
-            height: 100px;
-            background: url('confetti.png'); /* Replace with confetti image */
-            background-size: contain;
-            animation: blast 1.5s ease-out;
+            bottom: -150px;
+            background-color: rgba(255, 182, 193, 0.7); /* Soft pink balloons */
+            border-radius: 50%;
+            width: 60px;
+            height: 80px;
+            animation: floatBalloon 5s infinite ease-in-out;
         }
 
-        .blaster.left {
-            top: 10%;
-            left: 0;
-            transform: rotate(30deg);
+        .balloon:nth-child(1) {
+            left: 20%;
+            animation-duration: 6s;
         }
 
-        .blaster.right {
-            top: 10%;
-            right: 0;
-            transform: rotate(-30deg);
+        .balloon:nth-child(2) {
+            left: 40%;
+            background-color: rgba(173, 216, 230, 0.7); /* Light blue balloons */
+            animation-duration: 7s;
         }
 
-        /* Blaster keyframes */
-        @keyframes blast {
+        .balloon:nth-child(3) {
+            left: 60%;
+            background-color: rgba(255, 222, 173, 0.7); /* Light yellow balloons */
+            animation-duration: 8s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 80%;
+            background-color: rgba(144, 238, 144, 0.7); /* Light green balloons */
+            animation-duration: 5s;
+        }
+
+        /* Balloon floating animation */
+        @keyframes floatBalloon {
             0% {
                 transform: translateY(0);
                 opacity: 1;
             }
             100% {
-                transform: translateY(-200px) scale(1.5); /* Move upwards */
+                transform: translateY(-1000px);
                 opacity: 0;
             }
         }
@@ -132,9 +144,11 @@
 </head>
 <body>
 
-    <!-- Blasters for Left and Right -->
-    <div class="blaster left"></div>
-    <div class="blaster right"></div>
+    <!-- Animated Balloons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
 
     <!-- Main Container -->
     <div class="container">
@@ -154,4 +168,3 @@
 
 </body>
 </html>
-
